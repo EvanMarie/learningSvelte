@@ -12,3 +12,37 @@
 html {
     font-family: 'Quicksand', sans-serif;
 }
+
+/* For Chrome and Safari */
+::-webkit-scrollbar {
+    width: 4px;
+    /* You can adjust the width */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    /* You can set the track background */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    /* You can set the thumb color and opacity */
+}
+
+/* For Firefox */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    /* You can set the thumb color and opacity, and track color */
+}
+
+/* For Internet Explorer */
+body {
+    -ms-overflow-style: none;
+    /* This disables the default scrollbar styling */
+}
+
+body::-webkit-scrollbar {
+    width: 4px;
+    /* You can adjust the width */
+}

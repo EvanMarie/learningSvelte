@@ -1,8 +1,8 @@
 <script>
   export let src;
   export let alt;
-  export let nextSlide;
-  export let prevSlide;
+  // export let nextSlide;
+  // export let prevSlide;
 </script>
 
 <div class="carousel-item relative w-full">

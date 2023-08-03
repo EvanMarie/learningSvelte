@@ -1,7 +1,10 @@
 <script>
   import Todo from "./Todo.svelte";
   import Button from "./styleComponents/Button.svelte";
+  import CodeExample from "./styleComponents/sectionTemplateComponents/CodeExample.svelte";
+  import ExampleStack from "./styleComponents/sectionTemplateComponents/ExampleStack.svelte";
   import SectionContainer from "./styleComponents/sectionTemplateComponents/SectionContainer.svelte";
+  import VisualExample from "./styleComponents/sectionTemplateComponents/VisualExample.svelte";
 
   let newTask = "";
   let tasks = []; // Type declared explicitly
@@ -24,27 +27,61 @@
 </script>
 
 <SectionContainer exampleNo="2" title="Todo List">
-  <div
-    style="display: flex; flex-direction: row; gap: 10px; width: 100%; justify-content: center"
-  >
-    <input
-      type="text"
-      bind:value={newTask}
-      placeholder="New Task"
-      class="input input-bordered input-secondary w-full max-w-xs"
-      id="taskInput"
-      on:keydown={(event) => {
-        if (event.key === "Enter") addTask();
-      }}
-    />
-    <Button text="add" on:click={addTask} />
-  </div>
+  <VisualExample>
+    <div
+      style="display: flex; flex-direction: row; gap: 10px; width: 100%; justify-content: center"
+    >
+      <input
+        type="text"
+        bind:value={newTask}
+        placeholder="New Task"
+        class="input input-bordered input-secondary w-full max-w-xs"
+        id="taskInput"
+        on:keydown={(event) => {
+          if (event.key === "Enter") addTask();
+        }}
+      />
+      <Button text="add" on:click={addTask} />
+    </div>
 
-  <ul class="todo-list">
-    {#each tasks as task, index}
-      <li><Todo {task} remove={() => removeTask(index)} /></li>
-    {/each}
-  </ul>
+    <ul class="todo-list">
+      {#each tasks as task, index}
+        <li><Todo {task} remove={() => removeTask(index)} /></li>
+      {/each}
+    </ul></VisualExample
+  >
+
+  <CodeExample>
+    {`<div style="display: flex; 
+                  flex-direction: row; 
+                  gap: 10px; 
+                  width: 100%; 
+                  justify-content: center"
+              >
+  <input type="text"
+    bind:value={newTask}
+    placeholder="New Task"
+    class="input 
+            input-bordered 
+            input-secondary 
+            w-full max-w-xs"
+            id="taskInput"
+    on:keydown={(event) => {
+      if (event.key === "Enter") addTask();
+    }}
+  />
+  <Button text="add" on:click={addTask} />
+</div>
+
+<ul class="todo-list">
+  {#each tasks as task, index}
+    <li>
+      <Todo {task} 
+        remove={() => removeTask(index)} />
+        </li>
+  {/each}
+</ul`}
+  </CodeExample>
 </SectionContainer>
 
 <!--
@@ -72,7 +109,7 @@
     list-style: none;
     padding: 20px;
     height: 300px;
-    width: 500px;
+    width: 90%;
     overflow-y: scroll;
     background-color: purple;
     color: white;

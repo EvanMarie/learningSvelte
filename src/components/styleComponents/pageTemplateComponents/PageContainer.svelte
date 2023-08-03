@@ -11,5 +11,6 @@
     justify-content: center;
     gap: 10px;
     padding: 20px;
+    padding-bottom: 60px;
   }
 </style>

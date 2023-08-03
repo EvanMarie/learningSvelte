@@ -1,4 +1,6 @@
 <script>
+  import ExampleStack from "./ExampleStack.svelte";
+
   let fontSize = "1.5em";
   let color = "cyan";
   export let exampleNo = "";
@@ -10,7 +12,9 @@
     Example No: {exampleNo} - {title}
   </div>
   <div class="example-container">
-    <slot />
+    <ExampleStack>
+      <slot />
+    </ExampleStack>
   </div>
 </div>
 

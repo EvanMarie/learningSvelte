@@ -5,11 +5,13 @@
   import PageTemplate from "../../components/styleComponents/pageTemplateComponents/PageTemplate.svelte";
   import BearCarousel from "../../components/ImageCarousel.svelte";
   import ImageCarousel from "../../components/ImageCarousel.svelte";
+  import Card from "../../components/Card.svelte";
 </script>
 
 <PageTemplate title="Page One">
   <Counter />
   <TodoList />
-  <!-- <CarouselOG /> -->
+  <CarouselOG />
   <ImageCarousel />
+  <Card />
 </PageTemplate>

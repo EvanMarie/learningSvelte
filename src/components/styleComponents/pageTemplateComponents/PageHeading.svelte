@@ -16,7 +16,7 @@
 <style>
   .heading-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     padding-bottom: 20px;
   }
   .page-heading {
